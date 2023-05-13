@@ -12,6 +12,7 @@ import os
 import io
 import anthropic
 import PyPDF2
+import copy
 
 API_KEY = "ROZ1XaiS9AgwHygUhXRK6xhDbxQXroQ9xURzqxFE"
 co = cohere.Client(API_KEY)
@@ -19,6 +20,7 @@ co = cohere.Client(API_KEY)
 client = anthropic.Client('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')
 
 def document_search_and_ranking(first_query):
+    first_query = first_query.encode('ascii',errors='ignore').decode()
     # Example query and passages (data taken from http://sbert.net/datasets/simplewiki-2020-11-01.jsonl.gz)
     summary_prompt = f"{anthropic.HUMAN_PROMPT} You are an expert in the {first_query}. I want to conduct \
       an inclusive search in an Academic database for papers to figure out “What you want to learn”. Provide me \
@@ -34,10 +36,20 @@ def document_search_and_ranking(first_query):
     )
 
     second_query = response['completion']
+    second_query = second_query.encode('ascii', errors='ignore').decode()
 
     arxiv_docs = parse.arxiv_parsing(second_query)
 
-    results = co.rerank(query=second_query, documents=arxiv_docs, top_n=5, model='rerank-english-v2.0') # Change top_n to change the number of results returned. If top_n is not passed, all results will be returned.
+    streamlined_arxiv_docs = {}
+    copied_arxiv_docs = copy.deepcopy(arxiv_docs)
+    for id, doc in copied_arxiv_docs.items():
+      doc.pop("url")
+      doc.pop("pdf_url")
+      doc.pop("updated")
+      doc.pop("published")
+      streamlined_arxiv_docs[id] = doc
+
+    results = co.rerank(query=second_query, documents=streamlined_arxiv_docs, top_n=5, model='rerank-english-v2.0') # Change top_n to change the number of results returned. If top_n is not passed, all results will be returned.
 
     document_results = {}
 
