@@ -1,3 +1,5 @@
 requests
 pypdf2
 streamlit
+anthropic
+cohere

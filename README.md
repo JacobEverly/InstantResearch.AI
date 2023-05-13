@@ -1,13 +1,8 @@
 HackGPT: cohere challenge
 
-## Front-End
-
-https://github.com/JacobEverly/InstantResearch-Frontend
-
-
 ## Requirements
 
-```bash
-pip install anthropic
-pip install cohere
-```
+`pip install -r src/requirements.txt`
+
+## Run app
+`streamlit run app.py`
