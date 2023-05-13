@@ -8,7 +8,7 @@ def arxiv_search(search_term, start_idx=0, max_results=200, sort_by="relevance")
     
     assert(sort_by in ["relevance", "lastUpdatedDate", "submittedDate"])
 
-    data = urllib.request.urlopen(f"{BASE_URL}" + search_term + f"&start={start_idx}" + f"&max_results={max_results}" + f"&sortBy={sort_by}")
+    data = urllib.request.urlopen(f"{BASE_URL}" + search_term + f"&start={start_idx}" + f"&max_results={max_results}" + f"&sortBy={sort_by}" + "&sortOrder=ascending")
     
     return data.read().decode('utf-8')
 
@@ -23,5 +23,5 @@ def googlescholar_search(search_term):
     return page
 
 if __name__ == "__main__":
-    print(arxiv_search("deep learning", max_results=5, sort_by="lastUpdatedDate"))
-    print(googlescholar_search("deep learning"))
+    print(arxiv_search("Hidden Markov Models", max_results=5, sort_by="lastUpdatedDate"))
+    #print(googlescholar_search("deep learning"))
