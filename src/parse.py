@@ -6,7 +6,7 @@ from pprint import pprint
 import re
 
 def arxiv_parsing(query:str) -> None:
-    out = arxiv_search(query, max_results=200)
+    out = arxiv_search(query)
     #print(out)
     #pprint(out)
     docs = out.split("<entry>")[1:]

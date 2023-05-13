@@ -14,7 +14,7 @@ API_KEY = "ROZ1XaiS9AgwHygUhXRK6xhDbxQXroQ9xURzqxFE"
 co = cohere.Client(API_KEY)
 
 # Example query and passages (data taken from http://sbert.net/datasets/simplewiki-2020-11-01.jsonl.gz)
-print("Ask your query here:")
+print("What can we help you find?")
 query = str(input())
 arxis_docs = parse.arxiv_parsing(query)
 
