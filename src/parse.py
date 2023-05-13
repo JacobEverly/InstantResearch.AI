@@ -6,7 +6,7 @@ from pprint import pprint
 import re
 
 def arxiv_parsing(query:str) -> None:
-    out = arxiv_search(query)
+    out = arxiv_search(query, max_results=200)
     docs = out.split("<entry>")[1:]
 
     results = {} # arxiv ID -> {dict mapping of a bunch of fields}
