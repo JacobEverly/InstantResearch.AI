@@ -1,0 +1,1 @@
+"""collect webpage result from query"""
