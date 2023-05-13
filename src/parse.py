@@ -29,13 +29,7 @@ def arxiv_parsing(query:str) -> None:
 
     return results
 
-if __name__ == "__main__":
-    results = arxiv_parsing("deep learning")
-
-    url = results[list(results)[0]]["pdf_url"]
-
-    print(url)
-
+def arxiv_pdf_parsing(url):
     r = requests.get(url)
     f = io.BytesIO(r.content)
 
@@ -46,5 +40,16 @@ if __name__ == "__main__":
     for i in range(len(reader.pages)):
         page_contents = reader.pages[i].extract_text()
         contents += page_contents + " "
+
+    return contents
+
+if __name__ == "__main__":
+    results = arxiv_parsing("deep learning")
+
+    url = results[list(results)[0]]["pdf_url"]
+
+    print(url)
+
+    contents = arxiv_pdf_parsing(url)
 
     print(contents) # this is the full pdf contents    
