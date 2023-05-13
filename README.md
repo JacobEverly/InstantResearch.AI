@@ -9,4 +9,5 @@ https://github.com/JacobEverly/InstantResearch-Frontend
 
 ```bash
 pip install anthropic
+pip install cohere
 ```
