@@ -1,7 +1,12 @@
 import streamlit as st
+# from PIL import Image
+# import numpy as np
 from src.rank import document_search_and_ranking, summarize_document
 
-st.title("arXiv Cohere Search")
+# img = np.array(Image.open('logo.png'))
+# st.image(image=img, caption="InstantResearch.AI")
+
+st.title("InstantResearch.AI")
 IGNORED_KEYS = ["published", "updated", "rank"]
 
 with st.form(key='query_form'):
