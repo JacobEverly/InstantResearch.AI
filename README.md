@@ -45,7 +45,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -76,10 +75,9 @@ This system also has potential applications in other domains such as patent fili
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
-### Live Demo
+### Demo
 
-See <a href="https://sunil-2000-instantresearch-ai.streamlit.app/">here</a> for the demo.
-
+[![Demo Video](https://img.youtube.com/vi/dZEXd0PC1is/0.jpg)](https://www.youtube.com/watch?v=dZEXd0PC1is)
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
@@ -115,14 +113,6 @@ Get the project running locally by following these steps.
   ```
   streamlit run app.py
   ```
-
-<p align="right">[<a href="#readme-top">Back to Top</a>]</p>
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-<img src="images/usage.png" height="400">
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
