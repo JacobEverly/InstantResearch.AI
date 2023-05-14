@@ -105,10 +105,10 @@ Get the project running locally by following these steps.
   ```sh
   git clone https://github.com/JacobEverly/InstantResearch.AI.git
   ```
-4. Enter your Cohere API Key and Anthropic Claude API Key in `src/rank.py`
-  ```python
-  API_KEY = 'ENTER YOUR API KEY'
-  client = anthropic.Client("ENTER CLAUDE API KEY")
+4. Enter your Cohere API Key and Anthropic Claude API Key in a .streamlit file with `secrets.toml`.
+  ```
+  cohere_key = <ENTER YOUR API KEY>
+  anthropic_key = <ENTER CLAUDE API KEY>
   ```
 5. Run the streamlit webapp.
   ```
