@@ -75,8 +75,10 @@ This system also has potential applications in other domains such as patent fili
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
-### Demo
+### App 
+[InstantResearch](https://sunil-2000-instantresearch-ai.streamlit.app/)
 
+### Demo
 [![Demo Video](https://img.youtube.com/vi/dZEXd0PC1is/0.jpg)](https://www.youtube.com/watch?v=dZEXd0PC1is)
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
