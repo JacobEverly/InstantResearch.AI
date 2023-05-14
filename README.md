@@ -57,8 +57,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 The project aims to address the problems associated with academic archive searches. Users often encounter subpar results due to biased ranking and outdated keyword search methods, which can bury relevant papers in deeper pages or exclude them from the results entirely. Additionally, users spend considerable time clicking on articles and attempting to understand their relevance.
 
 Our solution leverages Cohere's semantic embeddings to reorganize search results, making them more relevant and accessible. We input the topic and research into our system, generate refined search criteria for the academic archive, and then query the site. The results are reordered using Cohere rerank and displayed to the user. Moreover, we provide a high-level summary of the selected articles to help users understand their content quickly.
@@ -66,7 +64,6 @@ Our solution leverages Cohere's semantic embeddings to reorganize search results
 This system also has potential applications in other domains such as patent filing, where it can find similar patents, and law, where it can identify relevant cases. It can even help in searching internal knowledge bases for pertinent information. This innovative solution is designed to make information search more efficient and effective.
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
-
 
 
 ### Built With
@@ -79,9 +76,9 @@ This system also has potential applications in other domains such as patent fili
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
-### Demo
+### Live Demo
 
-
+See <a href="https://sunil-2000-instantresearch-ai.streamlit.app/">here</a> for the demo.
 
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
@@ -96,7 +93,7 @@ To get a local copy up and running follow these simple example steps.
 Install the requirements with the following command.
 
 ```sh
-pip install -r src/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Installation
@@ -125,12 +122,9 @@ Get the project running locally by following these steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+<img src="images/usage.png" height="400">
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
-
 
 
 <!-- LICENSE -->
@@ -139,7 +133,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
-
 
 
 <!-- CONTACT -->
@@ -152,14 +145,12 @@ Project Link: [https://github.com/JacobEverly/InstantResearch.AI](https://github
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 This project would not have been possible without the HackGPT hackathon organizing team.
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
