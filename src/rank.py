@@ -4,19 +4,21 @@ import cohere
 import src.parse as parse
 import anthropic
 import copy
-
-API_KEY = "ROZ1XaiS9AgwHygUhXRK6xhDbxQXroQ9xURzqxFE"
-co = cohere.Client(API_KEY)
-
-client = anthropic.Client(
-    "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"
-)
+import streamlit as st
 
 
-def document_search_and_ranking(first_query):
+co = cohere.Client(st.secrets['cohere_key'])
+client = anthropic.Client(st.secrets['anthropic_key'])
+
+
+def document_search_and_ranking(context, first_query):
     first_query = first_query.encode("ascii", errors="ignore").decode()
+
+    context_prompt = f"You are an expert academic document retrieval system."
+    if context:
+        context_prompt = f"You are an expert academic document retireval system in {context}"  
     # Example query and passages (data taken from http://sbert.net/datasets/simplewiki-2020-11-01.jsonl.gz)
-    summary_prompt = f"{anthropic.HUMAN_PROMPT} You are an expert in the {first_query}. I want to conduct \
+    summary_prompt = f"{anthropic.HUMAN_PROMPT} {context_prompt}. My query is {first_query}. I want to conduct \
       an inclusive search in an Academic database for papers to figure out “What you want to learn”. Provide me \
         with the best search criteria to use with the database to find papers relevant to my topic. The suggested \
           search should try to be as inclusive as possible to result in the most papers possible on the topic. I \
