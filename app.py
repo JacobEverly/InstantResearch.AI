@@ -3,7 +3,7 @@ import streamlit as st
 # import numpy as np
 from src.rank import document_search_and_ranking, summarize_document
 
-# img = np.array(Image.open('logo.png'))
+# img = np.array(Image.open('images/logo.png'))
 # st.image(image=img, caption="InstantResearch.AI")
 
 st.title("InstantResearch.AI")
