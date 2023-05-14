@@ -34,7 +34,11 @@ if query_submit: # process
       st.markdown(body=f"## #{i+1}")
       for doc_k, doc_v in v.items():
         if doc_k not in IGNORED_KEYS:
-          st.markdown(body=f"### {doc_k}")
+          doc_k = doc_k.capitalize()
+          if doc_k != 'summary':
+            st.markdown(body=f"### {doc_k}")
+          else:
+             st.markdown(body="### abstract")
           if doc_k != "authors":
             st.markdown(body=f"{doc_v}")
           else:
