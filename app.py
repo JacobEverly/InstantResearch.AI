@@ -7,14 +7,14 @@ from src.rank import document_search_and_ranking, summarize_document
 # st.image(image=img, caption="InstantResearch.AI")
 
 st.title("InstantResearch.AI")
-IGNORED_KEYS = ["published", "updated", "rank"]
+IGNORED_KEYS = ["published", "updated", "rank", "url"]
 
 with st.form(key='context_form'):
   context = st.text_input(label='What is your area of research?')
-  context_submit = st.form_submit_button(label='Submit')
+  context_submit = st.form_submit_button(label='Enter')
 
 with st.form(key='query_form'):
-	query = st.text_input(label='What you want to learn?')
+	query = st.text_input(label='What do you want to learn?')
 	query_submit = st.form_submit_button(label='Submit')
 
 with st.form(key="summary_form"):
@@ -31,11 +31,22 @@ if query_submit: # process
        context_prompt = context
     docs = document_search_and_ranking(context, query)
     for i, (doc_id, v) in enumerate(docs.items()):
-      st.markdown(body=f"## #{i} arxiv doc_id: {doc_id}")
+      st.markdown(body=f"## #{i+1}")
       for doc_k, doc_v in v.items():
+
         if doc_k not in IGNORED_KEYS:
-          st.markdown(body=f"### {doc_k}")
-          st.markdown(body=f"{doc_v}")
+          doc_k = doc_k.capitalize()
+          
+          if doc_k != 'Summary':
+            st.markdown(body=f"### {doc_k}")
+          else:
+             st.markdown(body="### Abstract")
+          
+          if doc_k != "Authors":
+            st.markdown(body=f"{doc_v}")
+          else:
+            st.markdown(body=", ".join(doc_v))
+
       st.divider()
 
 if summary_submit:
