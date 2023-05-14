@@ -59,7 +59,7 @@
 
 The project aims to address the problems associated with academic archive searches. Users often encounter subpar results due to biased ranking and outdated keyword search methods, which can bury relevant papers in deeper pages or exclude them from the results entirely. Additionally, users spend considerable time clicking on articles and attempting to understand their relevance.
 
-Our solution leverages Cohere's semantic embeddings to reorganize search results, making them more relevant and accessible. We input the topic and research into our system, generate refined search criteria for the academic archive, and then query the site. The results are reordered using Cohere rerank and displayed to the user. Moreover, we provide a high-level summary of the selected articles to help users understand their content quickly.
+Our solution leverages Cohere's semantic embeddings to reorganize search results, making them more relevant and accessible. We input the topic and research into our system, generate refined search criteria for the academic archive, and then query the site. The results are reordered using Cohere rerank and displayed to the user. Moreover, we provide a high-level summary of the selected articles to help users understand their content quickly. Additionally, we are using Anthrophic Claude API's to summarize the whole research paper. 
 
 This system also has potential applications in other domains such as patent filing, where it can find similar patents, and law, where it can identify relevant cases. It can even help in searching internal knowledge bases for pertinent information. This innovative solution is designed to make information search more efficient and effective.
 
