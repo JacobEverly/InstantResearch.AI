@@ -7,7 +7,7 @@ from src.rank import document_search_and_ranking, summarize_document
 # st.image(image=img, caption="InstantResearch.AI")
 
 st.title("InstantResearch.AI")
-IGNORED_KEYS = ["published", "updated", "rank"]
+IGNORED_KEYS = ["published", "updated", "rank", "url"]
 
 with st.form(key='context_form'):
   context = st.text_input(label='What is your area of research?')
@@ -33,16 +33,20 @@ if query_submit: # process
     for i, (doc_id, v) in enumerate(docs.items()):
       st.markdown(body=f"## #{i+1}")
       for doc_k, doc_v in v.items():
+
         if doc_k not in IGNORED_KEYS:
           doc_k = doc_k.capitalize()
-          if doc_k != 'summary':
+          
+          if doc_k != 'Summary':
             st.markdown(body=f"### {doc_k}")
           else:
              st.markdown(body="### abstract")
-          if doc_k != "authors":
+          
+          if doc_k != "Authors":
             st.markdown(body=f"{doc_v}")
           else:
-           st.markdown(body=", ".join(doc_v))
+            st.markdown(body=", ".join(doc_v))
+
       st.divider()
 
 if summary_submit:
