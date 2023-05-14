@@ -40,7 +40,7 @@ if query_submit: # process
           if doc_k != 'Summary':
             st.markdown(body=f"### {doc_k}")
           else:
-             st.markdown(body="### abstract")
+             st.markdown(body="### Abstract")
           
           if doc_k != "Authors":
             st.markdown(body=f"{doc_v}")
