@@ -21,6 +21,7 @@
     <br />
     <a href="https://github.com/JacobEverly/InstantResearch.AI#demo"><strong>View Demo »</strong></a>
     <br />
+    <a href="Instant%20Research.pdf"><strong>Pitch Deck »</strong></a>
     <br />
     </p>
 </div>
